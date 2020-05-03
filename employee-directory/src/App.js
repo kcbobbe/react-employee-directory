@@ -1,6 +1,6 @@
 import React from 'react';
-import Employee from "./components/Employee"
 import Table from "./components/Table"
+import Jumbo from "./components/Jumbo"
 import './App.css';
 import employees from "./employees.json"
 
@@ -20,7 +20,10 @@ class App extends React.Component {
 render() {
   return (
     <>
-      <Table employees={this.state.employees} />
+      <Jumbo />
+      <div className="container">
+        <Table employees={this.state.employees} />
+      </div>
     </>
   )
 }
