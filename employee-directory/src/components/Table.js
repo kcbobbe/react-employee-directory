@@ -22,6 +22,7 @@ class Table extends React.Component {
     })
   }
   render() {
+    console.log(this.state.employees)
     const buttonStyles = {
       fontSize: ".5em",
       border: "none",
