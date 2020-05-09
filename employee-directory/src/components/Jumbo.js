@@ -6,7 +6,7 @@ class Jumbo extends React.Component {
       <div className="jumbotron jumbotron-fluid">
         <div className="container">
           <h1 className="display-4">Employee Directory</h1>
-          <p className="lead">Click the arrows to sort by ID, last name, or department.</p>
+          <p className="lead">Click the arrows to sort by ID, last name, or department. Click on a department to filter by department. Click on the 'view all' button to view all departments.</p>
         </div>
       </div>
     )

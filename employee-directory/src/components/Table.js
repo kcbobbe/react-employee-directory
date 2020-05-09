@@ -9,6 +9,20 @@ class Table extends React.Component {
     }
 }
 
+  filterDepartments(department){
+    let newEmployeeArray = this.state.employees.filter(employee => employee.department === department);
+    this.setState({
+      employees: newEmployeeArray
+    })
+  }
+
+  allDepartments(){
+    let allEmployees = this.props.employees
+    this.setState({
+      employees: allEmployees
+    })
+  }
+
   sortEmployees(param, direction){
     let newEmployeeArray = this.state.employees
     if (direction === "up"){
@@ -34,30 +48,31 @@ class Table extends React.Component {
           <tr>
             <th scope="col">
               #
-              <button className="btn btn-sm btn-outline-secondary m-1" style={buttonStyles} onClick={() => this.sortEmployees("id", "up")}>
+              <button className="btn btn-link m-1" style={buttonStyles} onClick={() => this.sortEmployees("id", "up")}>
                 <i className="fa fa-arrow-up"></i>
               </button>
-              <button className="btn btn-sm btn-outline-secondary m-1" style={buttonStyles} onClick={() => this.sortEmployees("id", "down")}>
+              <button className="btn btn-link m-1" style={buttonStyles} onClick={() => this.sortEmployees("id", "down")}>
                 <i className="fa fa-arrow-down"></i>
               </button>
               </th>
             <th scope="col">
               Name
-              <button className="btn btn-sm btn-outline-secondary m-1" style={buttonStyles} onClick={() => this.sortEmployees("lastName", "up")}>
+              <button className="btn btn-link m-1" style={buttonStyles} onClick={() => this.sortEmployees("lastName", "up")}>
                 <i className="fa fa-arrow-up"></i>
               </button>
-              <button className="btn btn-sm btn-outline-secondary m-1" style={buttonStyles} onClick={() => this.sortEmployees("lastName", "down")} >
+              <button className="btn btn-link m-1" style={buttonStyles} onClick={() => this.sortEmployees("lastName", "down")} >
                 <i className="fa fa-arrow-down"></i>
               </button>
             </th>
             <th scope="col">
-            <span>Department</span>
-              <button className="btn btn-sm btn-outline-secondary m-1" style={buttonStyles} onClick={() => this.sortEmployees("department", "up")} >
+              Department
+            <button className="btn btn-link" onClick={this.allDepartments.bind(this)}>View All</button>
+              {/* <button className="btn btn-sm btn-outline-secondary m-1" style={buttonStyles} onClick={() => this.sortEmployees("department", "up")} >
                 <i className="fa fa-arrow-up"></i>
               </button>
-              <button className="btn btn-sm btn-outline-secondary m-1" style={buttonStyles} onClick={() => this.sortEmployees("department", "down")}>
-                <i className="fa fa-arrow-down"></i>
-              </button>
+              <button className="btn btn-sm btn-outline-secondary m-1" style={buttonStyles} onClick={() => this.sortEmployees("department", "down")}> */}
+                {/* <i className="fa fa-arrow-down"></i>
+              </button> */}
             </th>
             <th>
               Address
@@ -65,7 +80,7 @@ class Table extends React.Component {
           </tr>
         </thead>
         {this.state.employees.map(employee => (
-          <Employee key={employee.id} employee={employee}/>
+          <Employee key={employee.id} employee={employee} filterDepartments={this.filterDepartments.bind(this)}/>
         ))}
         </table>
 
