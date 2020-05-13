@@ -10,7 +10,7 @@ class Table extends React.Component {
 }
 
   filterDepartments(department){
-    let newEmployeeArray = this.state.employees.filter(employee => employee.department === department);
+    let newEmployeeArray = this.props.employees.filter(employee => employee.department === department);
     this.setState({
       employees: newEmployeeArray
     })

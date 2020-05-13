@@ -36,9 +36,9 @@ render() {
         <h3>Loading...</h3>
       </>
     )
-  } else {
+  }else {
     return (
-<>
+    <>
       <Jumbo />
       <div className="container">
         <Table employees={this.state.employees} />
