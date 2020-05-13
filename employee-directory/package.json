@@ -11,7 +11,7 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
-  "homepage":"https://kcbobbe.github.io/react-employee-directory/",
+  "homepage": "https://kcbobbe.github.io/react-employee-directory/",
   "scripts": {
     "start": "PORT=3344 react-scripts start",
     "build": "react-scripts build",
